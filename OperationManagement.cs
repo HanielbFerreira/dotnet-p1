@@ -21,7 +21,7 @@ namespace Intraday
             List<OperationDate> dateOperations = this.operationDates.FindAll(ops => ops.Data.ToShortDateString().Equals(date.ToShortDateString()));
 
             Console.Clear();
-            Program.writeHeader($"Operações do dia: {date.ToShortDateString()}");
+            Program.WriteHeader($"Operações do dia: {date.ToShortDateString()}");
             Console.WriteLine("-----------------------");
             Console.WriteLine($" ID Saldo");
             Console.WriteLine("-----------------------");

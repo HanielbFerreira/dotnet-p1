@@ -20,7 +20,7 @@ namespace Intraday
                         RegisterNewOperationDate(operationManagement);
                         break;
                     case 2:
-                        showTotalBalanceByDay();
+                        ShowTotalBalanceByDay();
                         break;
                     default:
                         Console.WriteLine("Opcão Inválida, por favor, selecione outra opcão.");
@@ -47,7 +47,7 @@ namespace Intraday
         static void ShowMenu()
         {
             Console.Clear();
-            writeHeader("Menu de operações");
+            WriteHeader("Menu de operações");
             Console.WriteLine("Digite o numero de uma opção abaixo:");
             Console.WriteLine("1 - Cadastrar dia e operação.");
             Console.WriteLine("2 - Visualizar balanço por dia.");
@@ -56,13 +56,13 @@ namespace Intraday
             Console.WriteLine("Digite o Comando:");
         }
 
-        private static void enterToContinue()
+        private static void EnterToContinue()
         {
             Console.WriteLine("");
             Console.WriteLine("Pressione Enter para continuar...");
             Console.ReadLine();
         }
-        public static void writeHeader(string text)
+        public static void WriteHeader(string text)
         {
             Console.WriteLine($"-------------------- {text} ---------------");
             Console.WriteLine("");
@@ -70,7 +70,7 @@ namespace Intraday
         private static void RegisterNewOperationDate(OperationManagement operationManagement)
         {
 
-            writeHeader("Registro da criação");
+            WriteHeader("Registro da criação");
             Console.WriteLine("");
 
             Console.Write("Digite o Id da operação: ");
@@ -96,20 +96,20 @@ namespace Intraday
 
             operationManagement.RegisterOperationDate(od);
 
-            enterToContinue();
+            EnterToContinue();
 
         }
-        private static void showTotalBalanceByDay()
+        private static void ShowTotalBalanceByDay()
         {
             Console.Clear();
-            writeHeader("Visualizar operações por dia");
+            WriteHeader("Visualizar operações por dia");
             Console.Write("Digite a data (dd/mm/aaaa): ");
             Console.WriteLine();
             string dataInput = Console.ReadLine();
             DateTime data = DateTime.Parse(dataInput);
             operationManagement.ShowOperationDate(data);
             Console.ReadLine();
-            enterToContinue();
+            EnterToContinue();
         }
     }
 }
